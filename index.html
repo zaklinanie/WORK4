@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <title>Форма регистрации</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+    <body>
+        <main>
+			<form action="check.php">
+				<fieldset class="personal">
+					<legend>Личная информация</legend>
+					<p>
+						<label for="lastname" class="required">Фамилия: </label>
+						<input type="text" class="blocked" id="lastname" size="15" pattern="^[А-Яа-яЁё]+$" required>
+					</p>
+					<p>
+						<label for="name" class="required">Имя: </label>
+						<input type="text" class="blocked" id="name" size="15" pattern="^[А-Яа-яЁё]+$" required>
+					</p>
+					<p>
+						<label for="patronymic">Отчество: </label>
+						<input type="text" class="blocked" id="patronymic" size="15" pattern="^[А-Яа-яЁё]+$">
+					</p>
+				
+					<p>
+						<label for="gender" class="required">Пол</label>
+						<select name="gender" id="gender" required>
+							<option value="">Указать</option>
+							<option value="1">Мужской</option>
+							<option value="2">Женский</option>
+						</select>
+					</p>
+				
+					<p>
+						<label for="color">Цвет глаз: </label>
+						<input type="color" name="color" value="#454A1A">
+					</p>
+				
+					<p>
+						<label for="date" class="required">Дата рождения: </label>
+						<input type="date" name="date" required>
+					</p>
+				
+					<p>
+						<label for="age">Возраст (от 18 до 100): </label>
+						<input type="number" name="age" min="18" max="100" value="18">
+					</p>
+				
+					<p>
+						<label for="birthplace" class="required">Место рождения: </label>
+						<input list="birthplace" name="birthplace">
+						<datalist id="birthplace">
+						<option value="Великобритания">
+						<option value="Германия">
+						<option value="Китай">
+						<option value="Россия">
+						<option value="США">
+						<option value="Япония">
+						<option value="Украина">
+						<option value="Беларусь">
+						<option value="Латвия"></option>
+						<option value="Франция"></option>
+					</datalist>
+					</p>
+					
+					<p>
+						<label for="passport" class="required">Скриншот первой страницы паспорта в формате JPEG: </label>
+						<input type="file" id="passport" accept=".jpeg" required>
+					</p>
+				</fieldset>
+				
+				<fieldset class="contacts">
+					<legend>Контактная информация</legend>
+					<p>
+						<label for="index" class="required">Индекс: </label>
+						<input type="text" id="index"  pattern="^[0-9]{6}" required>
+					</p>
+					<p>
+						<label for="address" class="required">Домашний адрес: </label>
+						<input type="text" id="address" pattern="^[А-Яа-я0-9,\.\(\)\-\/ ]+$" required>
+					</p>
+					<p>
+						<label for="regdate" class="required">Дата регистрации: </label>
+						<input type="date" id="regdate" required>
+					</p>
+				
+					<p>
+						<label for="phonenumber" class="required">Номер телефона в формате <br>+7-xxx-xxx-xx-xx: </label>
+						<input type="tel" id="phonenumber" placeholder="+7-123-456-78-90" pattern="\+7[-]{0,1}[0-9]{3}[-]{0,1}[0-9]{3}[-]{0,1}[0-9]{2}[-]{0,1}[0-9]{2}" required>
+					</p>
+					<p>
+						<label for="email" class="required">E-mail: </label>
+						<input type="email" id="email" placeholder="mail@mail.ru" required>
+					</p>
+				</fieldset>
+				
+				<fieldset class="general">
+					<legend>Общая информация</legend>
+					<p>
+						<label for="info">Откуда Вы узнали об этом магазине? </label>
+					
+					
+							<p><input type="checkbox"  value="1">Телевидение</p>
+							<p><input type="checkbox"  value="2" > Радио</p>
+							<p><input type="checkbox"  value="3" > Интернет</p>
+							<p><input type="checkbox"  value="4"> Газета/журнал</p>
+							<p><input type="checkbox"  value="5"> Совет друзей/знакомых</p>
+					</p>
+				</fieldset>
+				
+				<div class="send">
+					<p>
+						<input type="checkbox" id="agree" required> <label for="agree" class="required">Я согласен(-а) на обработку персональных данных</label><br>
+						<input type="submit" value="Отправить">
+						<input type="reset" value="Очистить">
+					</p>
+				</div>
+			</form>
+		</main>
+
+	</body>
+</html>
